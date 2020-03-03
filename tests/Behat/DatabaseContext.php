@@ -39,7 +39,7 @@ class DatabaseContext implements Context
      */
     public function purgeDatabase(): void
     {
-        $this->entityManager->getConnection()-
+        //$this->entityManager->getConnection()
     }
 
 }
