@@ -2,6 +2,8 @@ default:
   suites:
     default:
       contexts:
+        - App\Tests\Behat\DatabaseContext:
+            @doctrine: '@doctrine'
         - FeatureContext:
             kernel: '@kernel'
 
