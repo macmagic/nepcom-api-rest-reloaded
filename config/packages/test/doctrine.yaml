@@ -1,0 +1,10 @@
+doctrine:
+  dbal:
+    connections:
+      default:
+        driver: pdo_sqlite
+        path: "%kernel.project_dir%/var/db_default_test.sqlite"
+        server_version: ~
+        charset: ~
+        default_table_options: ~
+        url: ~

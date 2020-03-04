@@ -4,6 +4,7 @@
 namespace Behat;
 
 use Behat\Behat\Context\Context;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
@@ -13,6 +14,7 @@ class DatabaseContext implements Context
     /** @var ManagerRegistry */
     private $doctrine;
 
+    /** @var EntityManagerInterface */
     private $entityManager;
 
     public function __construct(ManagerRegistry $doctrine)
@@ -39,7 +41,22 @@ class DatabaseContext implements Context
      */
     public function purgeDatabase(): void
     {
-        //$this->entityManager->getConnection()
+        $this->entityManager->getConnection()->getConfiguration()->setSQLLogger(null);
+
+        $purger = new ORMPurger($this->entityManager);
+        if('pdo_sqlite' === $this->entityManager->getConnection()->getDriver()->getName()) {
+            $tableNames = $this->entityManager->getConnection()->getSchemaManager()->listTableNames();
+            $purger->setPurgeMode(ORMPurger::PURGE_MODE_DELETE);
+            $purger->purge();
+            $resetIdsQuery = 'DELETE FROM sqlite_sequence WHERE name IN ("' . implode('", "', $tableNames) . '");';
+            $this->entityManager->getConnection()->query($resetIdsQuery);
+        } else {
+            $this->entityManager->getConnection()->query('SET FOREIGN_KEY_CHECKS = 0');
+            $purger->setPurgeMode(ORMPurger::PURGE_MODE_TRUNCATE);
+            $purger->purge();
+            $this->entityManager->getConnection()->query('SET FOREIGN_KEY_CHECKS = 1');
+        }
+        $this->entityManager->clear();
     }
 
 }

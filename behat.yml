@@ -2,13 +2,24 @@ default:
   suites:
     default:
       contexts:
+        - Behat\MinkExtension\Context\MinkContext
+        - Behatch\Context\RestContext
+        - App\Tests\Behat\Context\JsonContext
         - App\Tests\Behat\DatabaseContext:
-            @doctrine: '@doctrine'
+            filesystem: '@filesystem'
+            doctrine: '@doctrine'
+            sqlitePath: "%paths.base%/var/db_%s_test.sqlite"
+            projectDir: "%%kernel.project_dir%%"
         - FeatureContext:
             kernel: '@kernel'
-
   extensions:
     Behat\Symfony2Extension:
       kernel:
         bootstrap: features/bootstrap/bootstrap.php
         class: App\Kernel
+    Behat\MinkExtension:
+      base_url: ""
+      sessions:
+        default:
+          symfony2: ~
+    Behat\Extension: ~
