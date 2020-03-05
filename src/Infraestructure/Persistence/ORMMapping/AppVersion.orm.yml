@@ -1,0 +1,13 @@
+App\Domain\Entity\AppVersion:
+  type: entity
+  table: app_version
+
+  fields:
+    lastVersion:
+      type: string
+      column: last_version
+    create_date:
+      type: datetime
+      column: create_date
+
+
