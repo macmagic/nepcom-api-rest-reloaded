@@ -25,3 +25,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Shared\Infrastructure\Bus\Query\SymfonySyncQueryBus:
+        arguments: [!tagged nepcom.rest.query]
+        lazy: true
+
+    App\Shared\Domain\Bus\Query\QueryBus: '@App\Shared\Infrastructure\Bus\Query\SymfonySyncQueryBus'

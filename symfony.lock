@@ -137,6 +137,9 @@
     "justinrainbow/json-schema": {
         "version": "5.2.9"
     },
+    "lambdish/phunctional": {
+        "version": "v2.0.0"
+    },
     "ocramius/package-versions": {
         "version": "1.5.1"
     },
@@ -160,6 +163,9 @@
     },
     "ralouphie/getallheaders": {
         "version": "3.0.3"
+    },
+    "ramsey/uuid": {
+        "version": "3.9.3"
     },
     "symfony/browser-kit": {
         "version": "v4.4.4"

@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Infraestructure\Bus\Query;
+namespace App\Shared\Infrastructure\Bus\Query;
 
 use App\Shared\Domain\Bus\Query\Query;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\Bus\Query\Response;
+use App\Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler\CallableFirstParameterExtractor;
+use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
+use Symfony\Component\Messenger\Stamp\HandledStamp;
 
 class SymfonySyncQueryBus implements QueryBus
 {
@@ -21,7 +24,7 @@ class SymfonySyncQueryBus implements QueryBus
         $this->messageBus = new MessageBus(
             [
                 new HandleMessageMiddleware(
-                   // new HandlersLocator(CallableFir)
+                    new HandlersLocator(CallableFirstParameterExtractor::forCallables($queryHandlers))
                 ),
             ]
         );
@@ -29,6 +32,13 @@ class SymfonySyncQueryBus implements QueryBus
 
     public function ask(Query $query): ?Response
     {
-        // TODO: Implement ask() method.
+        try {
+            /** @var HandledStamp $stamp */
+            $stamp = $this->messageBus->dispatch($query)->last(HandledStamp::class);
+
+            return $stamp->getResult();
+        } catch (NoHandlerForMessageException $ex) {
+            throw new QueryNotRegisteredException($query);
+        }
     }
 }
