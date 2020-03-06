@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Behat;
 
@@ -27,7 +28,7 @@ class DatabaseContext implements Context
         /** @var EntityManagerInterface $em */
         $em = $this->doctrine->getManager();
 
-        if('pdo_sqlite' !== $em->getConnection()->getDriver()->getName()) {
+        if ('pdo_sqlite' !== $em->getConnection()->getDriver()->getName()) {
             throw new \RuntimeException(sprintf('Driver "%s" should be pdo_sqlite', $em->getConnection()->getDriver()->getName()));
         }
 
@@ -44,11 +45,11 @@ class DatabaseContext implements Context
         $this->entityManager->getConnection()->getConfiguration()->setSQLLogger(null);
 
         $purger = new ORMPurger($this->entityManager);
-        if('pdo_sqlite' === $this->entityManager->getConnection()->getDriver()->getName()) {
+        if ('pdo_sqlite' === $this->entityManager->getConnection()->getDriver()->getName()) {
             $tableNames = $this->entityManager->getConnection()->getSchemaManager()->listTableNames();
             $purger->setPurgeMode(ORMPurger::PURGE_MODE_DELETE);
             $purger->purge();
-            $resetIdsQuery = 'DELETE FROM sqlite_sequence WHERE name IN ("' . implode('", "', $tableNames) . '");';
+            $resetIdsQuery = 'DELETE FROM sqlite_sequence WHERE name IN ("'.implode('", "', $tableNames).'");';
             $this->entityManager->getConnection()->query($resetIdsQuery);
         } else {
             $this->entityManager->getConnection()->query('SET FOREIGN_KEY_CHECKS = 0');
@@ -58,5 +59,4 @@ class DatabaseContext implements Context
         }
         $this->entityManager->clear();
     }
-
 }

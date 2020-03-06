@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Infraestructure\Persistence\Repository;
 
 use App\Domain\Entity\AppVersion;
@@ -10,6 +12,5 @@ class AppVersionDoctrineRepository extends ServiceEntityRepository implements Ap
 {
     public function findLastVersion(): AppVersion
     {
-
     }
 }

@@ -1,0 +1,4 @@
+get_app_version:
+  path: /api/v1/app/version
+  controller: 'App\Controller\App\GetVersionAction'
+  methods: [GET]
