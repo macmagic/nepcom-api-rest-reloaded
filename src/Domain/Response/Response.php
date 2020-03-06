@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Domain\Response;
-
 
 use App\Domain\Entity\AppVersion;
 

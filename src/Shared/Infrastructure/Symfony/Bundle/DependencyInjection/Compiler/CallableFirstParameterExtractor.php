@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler;
 
 use App\Shared\Domain\Bus\Event\DomainEventSubscriber;
-use ReflectionClass;
-use ReflectionMethod;
 use function Lambdish\Phunctional\map;
 use function Lambdish\Phunctional\reduce;
 use function Lambdish\Phunctional\reindex;
+use ReflectionClass;
+use ReflectionMethod;
 
 final class CallableFirstParameterExtractor
 {

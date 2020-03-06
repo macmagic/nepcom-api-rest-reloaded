@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Application\GetVersion;
 
-use App\Domain\Entity\AppVersion;
 use App\Domain\Service\GetLastVersionService;
 use App\Shared\Domain\Bus\Query\QueryHandler;
 use Domain\Response\Response;

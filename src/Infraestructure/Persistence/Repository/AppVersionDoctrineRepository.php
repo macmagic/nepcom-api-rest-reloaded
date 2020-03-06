@@ -16,7 +16,6 @@ class AppVersionDoctrineRepository extends ServiceEntityRepository implements Ap
         parent::__construct($registry, AppVersion::class);
     }
 
-
     public function findLastVersion(): AppVersion
     {
         $query = $this->createQueryBuilder('a')
