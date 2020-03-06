@@ -19,5 +19,11 @@ class AppVersionDoctrineRepository extends ServiceEntityRepository implements Ap
 
     public function findLastVersion(): AppVersion
     {
+        $query = $this->createQueryBuilder('a')
+            ->orderBy('a.createDate', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery();
+
+        return $query->getOneOrNullResult();
     }
 }

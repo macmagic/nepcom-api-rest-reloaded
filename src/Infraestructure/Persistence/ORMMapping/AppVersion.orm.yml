@@ -2,11 +2,16 @@ App\Domain\Entity\AppVersion:
   type: entity
   table: app_version
 
+  id:
+    id:
+      type: integer
+      column: id
+
   fields:
     lastVersion:
       type: string
       column: last_version
-    create_date:
+    createDate:
       type: datetime
       column: create_date
 

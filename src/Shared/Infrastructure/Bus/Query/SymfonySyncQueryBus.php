@@ -35,7 +35,6 @@ class SymfonySyncQueryBus implements QueryBus
         try {
             /** @var HandledStamp $stamp */
             $stamp = $this->messageBus->dispatch($query)->last(HandledStamp::class);
-
             return $stamp->getResult();
         } catch (NoHandlerForMessageException $ex) {
             throw new QueryNotRegisteredException($query);

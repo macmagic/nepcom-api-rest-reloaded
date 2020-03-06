@@ -4,3 +4,16 @@ doctrine:
     connections:
       default:
         url: 'mysql://api-user:temporal@mysql-nepcom-reloaded:3306/db?charset=utf8'
+  orm:
+    auto_generate_proxy_classes: "%kernel.debug%"
+    default_entity_manager: default
+    entity_managers:
+      default:
+        auto_mapping: false
+        mappings:
+          domain:
+            type: yml
+            dir: "%kernel.root_dir%/../src/Infraestructure/Persistence/ORMMapping"
+            is_bundle: false
+            prefix: "App\\Domain\\Entity"
+            alias: Entity

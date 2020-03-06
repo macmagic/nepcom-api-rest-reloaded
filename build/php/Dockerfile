@@ -24,6 +24,13 @@ RUN wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer \
     && chmod a+x php-cs-fixer \
     && mv php-cs-fixer /usr/local/bin/php-cs-fixer
 
+RUN cat /etc/group
+
+RUN addgroup -g 1000 -S username && \
+        adduser -u 1000 -S username -G username
+
+USER 1000
+
 WORKDIR /app
 
 COPY . /app

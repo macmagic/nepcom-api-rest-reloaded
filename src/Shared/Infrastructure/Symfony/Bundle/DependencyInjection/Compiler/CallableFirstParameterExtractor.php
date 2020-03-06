@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler;
 
 use App\Shared\Domain\Bus\Event\DomainEventSubscriber;
+use ReflectionClass;
+use ReflectionMethod;
 use function Lambdish\Phunctional\map;
 use function Lambdish\Phunctional\reduce;
 use function Lambdish\Phunctional\reindex;
@@ -13,7 +15,7 @@ final class CallableFirstParameterExtractor
 {
     public function extract(callable $class): ?string
     {
-        $reflector = new \ReflectionClass($class);
+        $reflector = new ReflectionClass($class);
         $method = $reflector->getMethod('__invoke');
 
         if ($this->hasOnlyOneParameter($method)) {
