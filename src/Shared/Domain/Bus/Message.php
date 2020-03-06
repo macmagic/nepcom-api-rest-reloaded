@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Shared\Domain;
+declare(strict_types=1);
 
+namespace App\Shared\Domain;
 
 abstract class Message
 {

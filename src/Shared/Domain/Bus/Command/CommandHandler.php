@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Shared\Domain\Bus\Command;
+declare(strict_types=1);
 
+namespace App\Shared\Domain\Bus\Command;
 
 interface CommandHandler
 {
-
 }

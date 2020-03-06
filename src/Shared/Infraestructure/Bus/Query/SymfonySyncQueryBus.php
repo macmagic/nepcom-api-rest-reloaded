@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Shared\Infraestructure\Bus\Query;
+declare(strict_types=1);
 
+namespace App\Shared\Infraestructure\Bus\Query;
 
 use App\Shared\Domain\Bus\Query\Query;
 use App\Shared\Domain\Bus\Query\QueryBus;
@@ -21,7 +22,7 @@ class SymfonySyncQueryBus implements QueryBus
             [
                 new HandleMessageMiddleware(
                    // new HandlersLocator(CallableFir)
-                )
+                ),
             ]
         );
     }
