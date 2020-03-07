@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Domain\Response;
+namespace App\AppInfo\Domain\Response;
 
-use App\Domain\Entity\AppVersion;
+use App\AppInfo\Domain\Entity\AppVersion;
 
 class Response implements \App\Shared\Domain\Bus\Query\Response
 {

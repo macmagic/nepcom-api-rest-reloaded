@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller\App;
 
-use App\Application\GetVersion\GetVersionQuery;
+use App\AppInfo\Application\GetVersion\GetVersionQuery;
+use App\AppInfo\Domain\Response\Response;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -26,7 +27,7 @@ class GetVersionAction
 
     public function __invoke()
     {
-        /** @var \Domain\Response\Response $result */
+        /** @var Response $result */
         $result = $this->queryBus->ask(new GetVersionQuery('1234'));
 
         return JsonResponse::fromJsonString(

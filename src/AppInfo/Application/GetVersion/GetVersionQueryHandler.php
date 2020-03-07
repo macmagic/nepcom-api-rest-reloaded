@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Application\GetVersion;
+namespace App\AppInfo\Application\GetVersion;
 
-use App\Domain\Service\GetLastVersionService;
+use App\AppInfo\Domain\Service\GetLastVersionService;
 use App\Shared\Domain\Bus\Query\QueryHandler;
-use Domain\Response\Response;
+use App\AppInfo\Domain\Response\Response;
 use function Lambdish\Phunctional\apply;
 
 final class GetVersionQueryHandler implements QueryHandler

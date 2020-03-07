@@ -13,7 +13,7 @@ doctrine:
         mappings:
           domain:
             type: yml
-            dir: "%kernel.root_dir%/../src/Infraestructure/Persistence/ORMMapping"
+            dir: "%kernel.root_dir%/../src/AppInfo/Infrastructure/Persistence/ORMMapping"
             is_bundle: false
-            prefix: "App\\Domain\\Entity"
+            prefix: "App\\AppInfo\\Domain\\Entity"
             alias: Entity

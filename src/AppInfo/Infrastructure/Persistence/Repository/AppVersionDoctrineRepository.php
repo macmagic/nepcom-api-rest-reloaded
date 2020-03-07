@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Infraestructure\Persistence\Repository;
+namespace App\AppInfo\Infrastructure\Persistence\Repository;
 
-use App\Domain\Entity\AppVersion;
-use App\Domain\Repository\AppVersionRepository;
+use App\AppInfo\Domain\Entity\AppVersion;
+use App\AppInfo\Domain\Repository\AppVersionRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

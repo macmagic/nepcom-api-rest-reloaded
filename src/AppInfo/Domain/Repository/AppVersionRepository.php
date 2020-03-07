@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Domain\Repository;
+namespace App\AppInfo\Domain\Repository;
 
-use App\Domain\Entity\AppVersion;
+use App\AppInfo\Domain\Entity\AppVersion;
 
 interface AppVersionRepository
 {

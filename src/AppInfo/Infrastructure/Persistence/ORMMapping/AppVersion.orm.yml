@@ -1,4 +1,4 @@
-App\Domain\Entity\AppVersion:
+App\AppInfo\Domain\Entity\AppVersion:
   type: entity
   table: app_version
 
