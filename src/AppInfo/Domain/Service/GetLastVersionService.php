@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\AppInfo\Domain\Service;
 
+use App\AppInfo\Domain\Entity\AppVersion;
 use App\AppInfo\Domain\Repository\AppVersionRepository;
-use App\AppInfo\Domain\Response\Response;
 
 class GetLastVersionService
 {
@@ -17,8 +17,8 @@ class GetLastVersionService
         $this->repository = $repository;
     }
 
-    public function __invoke()
+    public function __invoke(): AppVersion
     {
-        return new Response($this->repository->findLastVersion());
+        return $this->repository->findLastVersion();
     }
 }

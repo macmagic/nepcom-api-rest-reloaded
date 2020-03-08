@@ -30,4 +30,8 @@ services:
         arguments: [!tagged nepcom.rest.query]
         lazy: true
 
+    App\Shared\Infrastructure\Bus\Command\SymfonySyncCommandBus:
+        arguments: [!tagged nepcom.rest.command]
+        lazy: true
+
     App\Shared\Domain\Bus\Query\QueryBus: '@App\Shared\Infrastructure\Bus\Query\SymfonySyncQueryBus'

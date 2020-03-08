@@ -5,33 +5,23 @@ declare(strict_types=1);
 namespace App\Controller\App;
 
 use App\AppInfo\Application\GetVersion\GetVersionQuery;
-use App\AppInfo\Domain\Response\Response;
-use App\Shared\Domain\Bus\Query\QueryBus;
+use App\Shared\Infrastructure\Api\ApiController;
+use AppInfo\Application\GetVersion\AppVersionResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
-class GetVersionAction
+class GetVersionAction extends ApiController
 {
-    /** @var QueryBus */
-    private $queryBus;
-
-    /** @var SerializerInterface */
-    private $serializer;
-
-    public function __construct(QueryBus $queryBus, SerializerInterface $serializer)
-    {
-        $this->queryBus = $queryBus;
-        $this->serializer = $serializer;
-    }
-
     public function __invoke()
     {
-        /** @var Response $result */
-        $result = $this->queryBus->ask(new GetVersionQuery('1234'));
-
+        /** @var AppVersionResponse $result */
+        $result = $this->ask(new GetVersionQuery());
+        $normalizer = new ObjectNormalizer(null, new CamelCaseToSnakeCaseNameConverter());
+        var_dump($normalizer->normalize($result));exit;
         return JsonResponse::fromJsonString(
-            $this->serializer->serialize($result->getContent(), JsonEncoder::FORMAT)
+            $this->serialize($normalizer->normalize($result, CamelCaseToSnakeCaseNameConverter::class), JsonEncoder::FORMAT)
         );
     }
 }

@@ -6,8 +6,10 @@ namespace App\AppInfo\Application\GetVersion;
 
 use App\AppInfo\Domain\Service\GetLastVersionService;
 use App\Shared\Domain\Bus\Query\QueryHandler;
-use App\AppInfo\Domain\Response\Response;
+use AppInfo\Application\GetVersion\AppVersionResponse;
+use AppInfo\Application\GetVersion\AppVersionResponseConverter;
 use function Lambdish\Phunctional\apply;
+use function Lambdish\Phunctional\pipe;
 
 final class GetVersionQueryHandler implements QueryHandler
 {
@@ -16,11 +18,11 @@ final class GetVersionQueryHandler implements QueryHandler
 
     public function __construct(GetLastVersionService $service)
     {
-        $this->service = $service;
+        $this->service = pipe($service, new AppVersionResponseConverter());
     }
 
-    public function __invoke(GetVersionQuery $query): Response
+    public function __invoke(GetVersionQuery $query): AppVersionResponse
     {
-        return apply($this->service, [$query->id()]);
+        return apply($this->service, []);
     }
 }
