@@ -18,10 +18,8 @@ class GetVersionAction extends ApiController
     {
         /** @var AppVersionResponse $result */
         $result = $this->ask(new GetVersionQuery());
-        $normalizer = new ObjectNormalizer(null, new CamelCaseToSnakeCaseNameConverter());
-        var_dump($normalizer->normalize($result));exit;
         return JsonResponse::fromJsonString(
-            $this->serialize($normalizer->normalize($result, CamelCaseToSnakeCaseNameConverter::class), JsonEncoder::FORMAT)
+            $this->serialize($result, JsonEncoder::FORMAT)
         );
     }
 }
