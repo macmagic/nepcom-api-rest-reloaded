@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Bus\Command;
 
@@ -21,7 +22,7 @@ class SymfonySyncCommandBus implements CommandBus
             [
                 new HandleMessageMiddleware(
                     new HandlersLocator(CallableFirstParameterExtractor::forCallables($commandHandlers))
-                )
+                ),
             ]
         );
     }

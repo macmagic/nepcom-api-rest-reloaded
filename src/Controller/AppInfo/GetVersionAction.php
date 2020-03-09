@@ -2,15 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\App;
+namespace App\Controller\AppInfo;
 
+use App\AppInfo\Application\GetVersion\AppVersionResponse;
 use App\AppInfo\Application\GetVersion\GetVersionQuery;
 use App\Shared\Infrastructure\Api\ApiController;
-use AppInfo\Application\GetVersion\AppVersionResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 class GetVersionAction extends ApiController
 {
@@ -18,6 +16,7 @@ class GetVersionAction extends ApiController
     {
         /** @var AppVersionResponse $result */
         $result = $this->ask(new GetVersionQuery());
+
         return JsonResponse::fromJsonString(
             $this->serialize($result, JsonEncoder::FORMAT)
         );

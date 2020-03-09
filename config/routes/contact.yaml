@@ -1,0 +1,4 @@
+notify_confidential:
+  path: /api/v1/contact/notify-confidential
+  controller: 'App\Controller\Contact\NotifyConfidentialAction'
+  methods: [POST]

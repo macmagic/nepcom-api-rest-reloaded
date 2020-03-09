@@ -35,3 +35,5 @@ services:
         lazy: true
 
     App\Shared\Domain\Bus\Query\QueryBus: '@App\Shared\Infrastructure\Bus\Query\SymfonySyncQueryBus'
+
+    App\Shared\Domain\Bus\Command\CommandBus: '@App\Shared\Infrastructure\Bus\Command\SymfonySyncCommandBus'

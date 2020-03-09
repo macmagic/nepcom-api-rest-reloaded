@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
 
 namespace AppInfo\Application;
 
-use App\AppInfo\Domain\Entity\AppVersion;
 use App\AppInfo\Application\GetVersion\AppVersionResponse;
 use App\AppInfo\Application\GetVersion\AppVersionResponseConverter;
+use App\AppInfo\Domain\Entity\AppVersion;
 use PHPUnit\Framework\TestCase;
 
 class AppVersionResponseTest extends TestCase
@@ -20,5 +21,4 @@ class AppVersionResponseTest extends TestCase
         self::assertEquals($appVersion->getCreateDate(), $appVersionResponse->getCreateDate());
         self::assertEquals($appVersion->getLastVersion(), $appVersionResponse->getLastVersion());
     }
-
 }

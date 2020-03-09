@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Api;
 
@@ -62,7 +63,5 @@ class ApiController
         } catch (ExceptionInterface $ex) {
             throw new Exception($ex->getMessage());
         }
-
     }
-
 }
