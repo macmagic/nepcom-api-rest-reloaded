@@ -6,8 +6,8 @@ namespace App\AppInfo\Application\GetVersion;
 
 use App\AppInfo\Domain\Service\GetLastVersionService;
 use App\Shared\Domain\Bus\Query\QueryHandler;
-use AppInfo\Application\GetVersion\AppVersionResponse;
-use AppInfo\Application\GetVersion\AppVersionResponseConverter;
+use App\AppInfo\Application\GetVersion\AppVersionResponse;
+use App\AppInfo\Application\GetVersion\AppVersionResponseConverter;
 use function Lambdish\Phunctional\apply;
 use function Lambdish\Phunctional\pipe;
 

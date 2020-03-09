@@ -18,6 +18,6 @@ abstract class Message
 
     public function getMessageId(): Uuid
     {
-        return $this->getMessageId();
+        return $this->messageId;
     }
 }

@@ -1,8 +1,7 @@
 <?php
 
 
-namespace AppInfo\Application\GetVersion;
-
+namespace App\AppInfo\Application\GetVersion;
 
 use App\Shared\Domain\Bus\Query\Response;
 

@@ -1,8 +1,7 @@
 <?php
 
 
-namespace AppInfo\Application\GetVersion;
-
+namespace App\AppInfo\Application\GetVersion;
 
 use App\AppInfo\Domain\Entity\AppVersion;
 

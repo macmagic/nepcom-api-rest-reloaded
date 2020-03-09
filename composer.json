@@ -15,7 +15,6 @@
         "symfony/framework-bundle": "4.4.*",
         "symfony/messenger": "4.4.*",
         "symfony/serializer": "4.4.*",
-        "symfony/test-pack": "^1.0",
         "symfony/yaml": "4.4.*"
     },
     "require-dev": {
@@ -24,7 +23,8 @@
         "behat/mink-extension": "^2.3",
         "behat/mink-goutte-driver": "^1.2",
         "behatch/contexts": "^3.3",
-        "doctrine/doctrine-fixtures-bundle": "^3.3"
+        "doctrine/doctrine-fixtures-bundle": "^3.3",
+        "symfony/test-pack": "^1.0"
     },
     "config": {
         "preferred-install": {
