@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Contact\Domain\Repository;
+namespace Notification\Domain\Repository;
 
 interface NotifyRepository
 {
+
 }

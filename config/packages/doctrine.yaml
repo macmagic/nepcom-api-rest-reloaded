@@ -11,9 +11,15 @@ doctrine:
       default:
         auto_mapping: false
         mappings:
-          domain:
+          appinfo:
             type: yml
             dir: "%kernel.root_dir%/../src/AppInfo/Infrastructure/Persistence/ORMMapping"
             is_bundle: false
             prefix: "App\\AppInfo\\Domain\\Entity"
+            alias: Entity
+          notification:
+            type: yml
+            dir: "%kernel.root_dir%/../src/Notification/Infrastructure/Persistence/ORMMapper"
+            is_bundle: false
+            prefix: "Notification\Domain\Entity"
             alias: Entity

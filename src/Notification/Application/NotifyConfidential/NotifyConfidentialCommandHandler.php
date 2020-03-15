@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Contact\Application\NotifyConfidential;
+namespace Notification\Application\NotifyConfidential;
 
-use App\Contact\Domain\Service\NotifyConfidentialService;
+use Notification\Domain\Service\NotifyConfidentialService;
 use App\Shared\Domain\Bus\Command\CommandHandler;
 
 class NotifyConfidentialCommandHandler implements CommandHandler

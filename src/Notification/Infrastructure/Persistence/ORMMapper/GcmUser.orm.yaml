@@ -1,0 +1,19 @@
+Notification\Domain\Entity\GcmUser:
+  type: entity
+  table: gcm_users
+
+  id:
+    id:
+      type: integer
+      column: id
+
+  fields:
+    user:
+      type: string
+      column: user
+    gcmKey:
+      type: string
+      column: gcm_user
+    lastSeen:
+      type: integer
+      column: last_seen

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Contact\Application\NotifyConfidential;
+namespace Notification\Application\NotifyConfidential;
 
 use App\Shared\Domain\Bus\Command\Command;
 use App\Shared\Domain\ValueObject\Uuid;

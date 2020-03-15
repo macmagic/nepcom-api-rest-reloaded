@@ -167,6 +167,9 @@
     "ramsey/uuid": {
         "version": "3.9.3"
     },
+    "sly/notification-pusher": {
+        "version": "v2.3.6"
+    },
     "symfony/browser-kit": {
         "version": "v4.4.4"
     },
@@ -281,6 +284,9 @@
     "symfony/mime": {
         "version": "v4.4.4"
     },
+    "symfony/options-resolver": {
+        "version": "v4.4.5"
+    },
     "symfony/phpunit-bridge": {
         "version": "4.3",
         "recipe": {
@@ -307,6 +313,9 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.14.0"
+    },
+    "symfony/process": {
+        "version": "v4.4.5"
     },
     "symfony/property-access": {
         "version": "v4.4.5"
@@ -361,5 +370,32 @@
     },
     "vlucas/phpdotenv": {
         "version": "v4.1.1"
+    },
+    "zendframework/zend-escaper": {
+        "version": "2.6.1"
+    },
+    "zendframework/zend-http": {
+        "version": "2.11.2"
+    },
+    "zendframework/zend-json": {
+        "version": "3.1.2"
+    },
+    "zendframework/zend-loader": {
+        "version": "2.6.1"
+    },
+    "zendframework/zend-stdlib": {
+        "version": "3.2.1"
+    },
+    "zendframework/zend-uri": {
+        "version": "2.7.1"
+    },
+    "zendframework/zend-validator": {
+        "version": "2.13.0"
+    },
+    "zendframework/zendservice-apple-apns": {
+        "version": "1.4.1"
+    },
+    "zendframework/zendservice-google-gcm": {
+        "version": "2.1.1"
     }
 }
