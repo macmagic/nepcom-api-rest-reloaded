@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Domain\Bus;
+namespace Shared\Domain\Bus;
 
-use App\Shared\Domain\Message;
-use App\Shared\Domain\ValueObject\Uuid;
+use Shared\Domain\ValueObject\Uuid;
 
 abstract class Request extends Message
 {

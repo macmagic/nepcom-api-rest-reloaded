@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Notification\Application\NotifyConfidential;
 
 use Notification\Domain\Service\NotifyConfidentialService;
-use App\Shared\Domain\Bus\Command\CommandHandler;
+use Shared\Domain\Bus\Command\CommandHandler;
 
 class NotifyConfidentialCommandHandler implements CommandHandler
 {

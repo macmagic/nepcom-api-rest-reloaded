@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Infrastructure\Api;
+namespace Shared\Infrastructure\Api;
 
-use App\Shared\Domain\Bus\Command\Command;
-use App\Shared\Domain\Bus\Command\CommandBus;
-use App\Shared\Domain\Bus\Query\Query;
-use App\Shared\Domain\Bus\Query\QueryBus;
-use App\Shared\Domain\Bus\Query\Response;
+use Shared\Domain\Bus\Command\Command;
+use Shared\Domain\Bus\Command\CommandBus;
+use Shared\Domain\Bus\Query\Query;
+use Shared\Domain\Bus\Query\QueryBus;
+use Shared\Domain\Bus\Query\Response;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;

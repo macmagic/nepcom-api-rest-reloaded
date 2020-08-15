@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\AppInfo\Application\GetVersion;
+namespace AppInfo\Application\GetVersion;
 
 use App\Shared\Domain\Bus\Query\Response;
 

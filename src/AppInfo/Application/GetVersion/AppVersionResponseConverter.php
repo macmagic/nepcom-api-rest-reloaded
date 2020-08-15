@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\AppInfo\Application\GetVersion;
+namespace AppInfo\Application\GetVersion;
 
-use App\AppInfo\Domain\Entity\AppVersion;
+use AppInfo\Domain\Entity\AppVersion;
 
 class AppVersionResponseConverter
 {

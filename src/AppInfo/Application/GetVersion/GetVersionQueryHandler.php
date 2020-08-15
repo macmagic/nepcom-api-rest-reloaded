@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\AppInfo\Application\GetVersion;
+namespace AppInfo\Application\GetVersion;
 
-use App\AppInfo\Domain\Service\GetLastVersionService;
-use App\Shared\Domain\Bus\Query\QueryHandler;
+use AppInfo\Domain\Service\GetLastVersionService;
+use Shared\Domain\Bus\Query\QueryHandler;
 use function Lambdish\Phunctional\apply;
 use function Lambdish\Phunctional\pipe;
 

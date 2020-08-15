@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Domain;
+namespace Shared\Domain\Bus;
 
-use App\Shared\Domain\ValueObject\Uuid;
+use Shared\Domain\ValueObject\Uuid;
 
 abstract class Message
 {

@@ -21,5 +21,5 @@ doctrine:
             type: yml
             dir: "%kernel.root_dir%/../src/Notification/Infrastructure/Persistence/ORMMapper"
             is_bundle: false
-            prefix: "Notification\Domain\Entity"
+            prefix: "Notification\\Domain\\Entity"
             alias: Entity

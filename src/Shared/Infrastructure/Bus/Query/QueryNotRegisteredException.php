@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Infrastructure\Bus\Query;
+namespace Shared\Infrastructure\Bus\Query;
 
 class QueryNotRegisteredException extends \DomainException
 {

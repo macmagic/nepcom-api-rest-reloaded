@@ -1,0 +1,36 @@
+Notification\Domain\Entity\GcmUser:
+  type: entity
+  table: gcm_users
+
+  id:
+    id:
+      type: integer
+      column: id
+      generator:
+        strategy: AUTO
+
+  fields:
+    user:
+      type: string
+    token:
+      type: string
+    lastSeen:
+      type: integer
+      column: last_seen
+    notificationGroupEnabled:
+      type: boolean
+      column: notification_group_enabled
+    notificationEnabled:
+      type: boolean
+      column: notification_enabled
+    vibrationGroupEnabled:
+      type: boolean
+      column: vibration_group_enabled
+    vibrationEnabled:
+      type: boolean
+      column: vibration_enabled
+    soundType:
+      type: string
+      column: sound_type
+
+

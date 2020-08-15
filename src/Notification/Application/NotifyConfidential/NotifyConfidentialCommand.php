@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Notification\Application\NotifyConfidential;
 
-use App\Shared\Domain\Bus\Command\Command;
-use App\Shared\Domain\ValueObject\Uuid;
+use Shared\Domain\Bus\Command\Command;
+use Shared\Domain\ValueObject\Uuid;
 
 class NotifyConfidentialCommand extends Command
 {

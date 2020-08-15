@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Bus\Command;
 
-use App\Shared\Domain\Bus\Command\Command;
-use App\Shared\Domain\Bus\Command\CommandBus;
-use App\Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler\CallableFirstParameterExtractor;
+use Shared\Domain\Bus\Command\Command;
+use Shared\Domain\Bus\Command\CommandBus;
+use Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler\CallableFirstParameterExtractor;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;

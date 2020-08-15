@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\AppInfo\Domain\Service;
+namespace AppInfo\Domain\Service;
 
-use App\AppInfo\Domain\Entity\AppVersion;
-use App\AppInfo\Domain\Repository\AppVersionRepository;
+use AppInfo\Domain\Entity\AppVersion;
+use AppInfo\Domain\Repository\AppVersionRepository;
 
 class GetLastVersionService
 {

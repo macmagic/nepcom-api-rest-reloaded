@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Shared\Infrastructure\Bus\Query;
+namespace Shared\Infrastructure\Bus\Query;
 
-use App\Shared\Domain\Bus\Query\Query;
-use App\Shared\Domain\Bus\Query\QueryBus;
-use App\Shared\Domain\Bus\Query\Response;
-use App\Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler\CallableFirstParameterExtractor;
+use Shared\Domain\Bus\Query\Query;
+use Shared\Domain\Bus\Query\QueryBus;
+use Shared\Domain\Bus\Query\Response;
+use Shared\Infrastructure\Symfony\Bundle\DependencyInjection\Compiler\CallableFirstParameterExtractor;
 use Symfony\Component\Messenger\Exception\NoHandlerForMessageException;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
 use Symfony\Component\Messenger\MessageBus;

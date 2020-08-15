@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\AppInfo\Domain\Entity;
+namespace AppInfo\Domain\Entity;
 
 use DateTime;
 

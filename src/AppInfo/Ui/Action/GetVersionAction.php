@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\AppInfo;
+namespace AppInfo\Ui\Action;
 
-use App\AppInfo\Application\GetVersion\AppVersionResponse;
-use App\AppInfo\Application\GetVersion\GetVersionQuery;
-use App\Shared\Infrastructure\Api\ApiController;
+use AppInfo\Application\GetVersion\AppVersionResponse;
+use AppInfo\Application\GetVersion\GetVersionQuery;
+use Shared\Infrastructure\Api\ApiController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 

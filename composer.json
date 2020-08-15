@@ -35,7 +35,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "AppInfo\\": "src/AppInfo",
+            "Notification\\": "src/Notification",
+            "Shared\\" : "src/Shared"
         }
     },
     "autoload-dev": {

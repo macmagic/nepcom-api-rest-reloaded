@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
-use App\Shared\Domain\Bus\Command\CommandHandler;
-use App\Shared\Domain\Bus\Query\QueryHandler;
+use Shared\Domain\Bus\Command\CommandHandler;
+use Shared\Domain\Bus\Query\QueryHandler;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
